@@ -19,6 +19,19 @@ source("test_2.R")
 
 ## Model Comparison
 
+Table 1 provides a regression table for the four preliminary models:
+
+1. Test scores regressed on lagged SEL with individual fixed effects
+2. Test scores regressed on the first two lags of SEL and the second lag of test scores (Marty et al. model 1)
+3. Test scores regressed on the first two lags of SEL and the first two lags of test scores (Marty et al. model 2)
+4. Test scores regressed on lagged SEL and the first two lags of test scores.
+
+On face, it seems that models (3) and (4) appear the best fitting. Next, note that growth mindset and self management are the two subconstructs with the highest magnitude coefficients. Third, note that the coefficient on self actualization is negative in all four models. 
+
+## Subgroup analysis
+
+*Forthcoming...*
+
 ```{r, results='asis'}
 
 stargazer(model_1_t1, 
@@ -50,10 +63,19 @@ stargazer(model_1_t1,
 
 ```
 
+\newpage
 
 # Test 2: Smarter Balanced Math
 
 ## Model Comparison
+
+Table 2 provides a regression table for the four preliminary models. These are the same specifications in Table 1, only the dependent variable is a different *test*:
+
+As in Table 1, models (3) and (4) appear to be the best fits. Remarks regarding the magnitude and signs of the coefficeints carry over to this table, as well.
+
+## Subgroup analysis
+
+*Forthcoming...*
 
 ```{r, results='asis'}
 
