@@ -1,5 +1,5 @@
 # core-pace
-Repository for analysis of CORE SEL data.
+Repository for analysis of CORE SEL data. Note none of the data is retained in this repo.
 
 - To get a sense for the flow, see main.R as it organizes the ancillary scripts.
 - To replicate results, edit file_paths.R to point to your data directory and then run main.R
