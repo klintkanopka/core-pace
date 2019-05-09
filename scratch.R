@@ -1,25 +1,4 @@
----
-title: 'Changes in SEL: First Report'
-author: "Klint Kanopka"
-date: "May 9, 2019"
-output: pdf_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-library(conflicted)
 library(stargazer)
-source("file_paths.R")
-source("read_data.R")
-source("test_1.R")
-source("test_2.R")
-```
-
-# Test 1: Smarter Balanced ELA
-
-## Model Comparison
-
-```{r, results='asis'}
 
 stargazer(model_1_t1, 
           model_2_t1, 
@@ -41,21 +20,14 @@ stargazer(model_1_t1,
                              "$SEL_{SM,t-2}$",
                              "$TEST_{t-1}$",
                              "$TEST_{t-2}$"
-                             ),
+          ),
           omit.stat = "f",
           dep.var.labels.include = FALSE,
           dep.var.caption = "Scaled Test Score",
           add.lines=list(c("Individual Fixed Effects", "X", "", "", ""))
-          )
-
-```
+)
 
 
-# Test 2: Smarter Balanced Math
-
-## Model Comparison
-
-```{r, results='asis'}
 
 stargazer(model_1_t2, 
           model_2_t2, 
@@ -77,11 +49,9 @@ stargazer(model_1_t2,
                              "$SEL_{SM,t-2}$",
                              "$TEST_{t-1}$",
                              "$TEST_{t-2}$"
-                             ),
+          ),
           omit.stat = "f",
           dep.var.labels.include = FALSE,
           dep.var.caption = "Scaled Test Score",
           add.lines=list(c("Individual Fixed Effects", "X", "", "", ""))
-          )
-
-```
+)

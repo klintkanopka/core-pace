@@ -3,18 +3,18 @@ library(tidyverse)
 conflict_prefer("filter", "dplyr", "stats")
 
 # culture-climate surveys
-escc <- read_dta(file_escc) %>%
-  mutate_at("cds", as.character)
-hscc <- read_dta(file_hscc) %>%
-  mutate_at("cds", as.character)
-fcc  <- read_dta(file_fcc) %>%
-  mutate_at("cds", as.character)
-scc  <- read_dta(file_scc) %>%
-  mutate_at("cds", as.character)
+#escc <- read_dta(file_escc) %>%
+#  mutate_at("cds", as.character)
+#hscc <- read_dta(file_hscc) %>%
+#  mutate_at("cds", as.character)
+#fcc  <- read_dta(file_fcc) %>%
+#  mutate_at("cds", as.character)
+#scc  <- read_dta(file_scc) %>%
+#  mutate_at("cds", as.character)
 
 # school quality improvement index
-sqii <- read_dta(file_sqii) %>%
-  mutate_at("cds", as.character)
+#sqii <- read_dta(file_sqii) %>%
+#  mutate_at("cds", as.character)
 
 # school-level data
 sch  <- read_dta(file_sch) %>%
@@ -29,17 +29,16 @@ att  <- read_dta(file_att) %>%
   mutate_at("cds", as.character)
 
 # enrollment data
-enrl <- read_dta(file_enrl) %>%
-  mutate_at("cds", as.character)
+#enrl <- read_dta(file_enrl) %>%
+#  mutate_at("cds", as.character)
 
 # sel surveys
-sela <- read_dta(file_sela) %>%
-  mutate_at("cds", as.character)
-selb <- read_dta(file_selb) %>%
-  mutate_at("cds", as.character)
-
 sela_scales <- read_dta(file_sela_scales) %>%
   mutate_at("cds", as.character)
+#sela <- read_dta(file_sela) %>%
+#  mutate_at("cds", as.character)
+#selb <- read_dta(file_selb) %>%
+#  mutate_at("cds", as.character)
 
 # student data
 stu  <- read_dta(file_stu)
@@ -52,7 +51,6 @@ tests <- read_dta(file_tests) %>%
   mutate_at("tests_exemption", as.factor) 
 
 merge_cond <- c("student_id", "cds", "district", "school_year")
-#inner_join(tests, sela, by=merge_cond) %>%
 
 student_sel_d <- sela_scales %>%
   select(student_id, cds, district, school_year, 
@@ -70,3 +68,6 @@ student_sel_d <- sela_scales %>%
   group_by(student_id) %>% 
   filter(n_distinct(school_year) == 3) %>% 
   ungroup()
+
+# clean up
+rm(att, stu, stua, sch, scha, sela_scales)

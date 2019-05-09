@@ -1,5 +1,4 @@
 # smarter balanced ELA
-library(lmtest)
 library(plm)
 conflict_prefer("lag", "plm")
 
@@ -17,29 +16,27 @@ d <- tests %>%
 
 spec_1 <- "tests_scalescore ~ lag(sela_scalescore_gm_pcm, 1) + lag(sela_scalescore_sa_pcm, 1) + lag(sela_scalescore_se_pcm, 1) + lag(sela_scalescore_sm_pcm, 1)"
 model_1_t1 <- plm(as.formula(spec_1), data = d, model="within")
-#m1_t1_se <- coeftest(model_1_t1, 
-#                     vcov=vcovHC(model_1_t1, type="HC2", cluster="group"))[, 2]
+m1_t1_se <- sqrt(diag(vcovHC(model_1_t1, type="HC0", cluster="group")))
 
 # 1st model from marty et al.
 # TestScores(t) = SEL(t-1) + SEL(t-2) + TestScores(t-2)  
 
 spec_2 <- "tests_scalescore ~ lag(sela_scalescore_gm_pcm, 1) + lag(sela_scalescore_sa_pcm, 1) + lag(sela_scalescore_se_pcm, 1) + lag(sela_scalescore_sm_pcm, 1) + lag(sela_scalescore_gm_pcm, 2) + lag(sela_scalescore_sa_pcm, 2) + lag(sela_scalescore_se_pcm, 2) + lag(sela_scalescore_sm_pcm, 2) + lag(tests_scalescore, 2)"
 model_2_t1 <- plm(as.formula(spec_2), data = d, model="pooling")
-#m2_t1_se <- coeftest(model_2_t1, 
-#                     vcov=vcovHC(model_2_t1, type="HC2", cluster="group"))[, 2]
+m2_t1_se <- sqrt(diag(vcovHC(model_2_t1, type="HC0", cluster="group")))
 
 # 2nd model from marty et al.
 # TestScores(t) = SEL(t-1) + SEL(t-2) + TestScores(t-1) + TestScores(t-2) 
 
 spec_3 <- "tests_scalescore ~ lag(sela_scalescore_gm_pcm, 1) + lag(sela_scalescore_sa_pcm, 1) + lag(sela_scalescore_se_pcm, 1) + lag(sela_scalescore_sm_pcm, 1) + lag(sela_scalescore_gm_pcm, 2) + lag(sela_scalescore_sa_pcm, 2) + lag(sela_scalescore_se_pcm, 2) + lag(sela_scalescore_sm_pcm, 2) + lag(tests_scalescore, 1) + lag(tests_scalescore, 2)"
 model_3_t1 <- plm(as.formula(spec_3), data = d, model="pooling")
-#m3_t1_se <- coeftest(model_3_t1, 
-#                     vcov=vcovHC(model_3_t1, type="HC2", cluster="group"))[, 2]
+m3_t1_se <- sqrt(diag(vcovHC(model_3_t1, type="HC0", cluster="group")))
 
 # model from susana & susanna
 # TestScores(t) = SEL(t-1) + TestScores(t-1) + TestScores(t-2) 
 
 spec_4 <- "tests_scalescore ~ lag(sela_scalescore_gm_pcm, 1) + lag(sela_scalescore_sa_pcm, 1) + lag(sela_scalescore_se_pcm, 1) + lag(sela_scalescore_sm_pcm, 1) + lag(tests_scalescore, 1) + lag(tests_scalescore, 2)"
 model_4_t1 <- plm(as.formula(spec_4), data = d, model="pooling")
-#m4_t1_se <- coeftest(model_4_t1, 
-#                     vcov=vcovHC(model_4_t1, type="HC2", cluster="group"))[, 2]
+m4_t1_se <- sqrt(diag(vcovHC(model_4_t1, type="HC0", cluster="group")))
+
+rm(d)
