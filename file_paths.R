@@ -18,3 +18,19 @@ file_selb <- path(dir_data, "selb_20190211", ext="dta")
 file_stu  <- path(dir_data, "stu_20190211", ext="dta")
 file_stua <- path(dir_data, "stua_20190211", ext="dta")
 file_tests <- path(dir_data, "tests_20190211", ext="dta")
+
+math_gm_tab <- path(dir_output, "math_gm", ext="tex")
+math_sa_tab <- path(dir_output, "math_sa", ext="tex")
+math_se_tab <- path(dir_output, "math_se", ext="tex")
+math_sm_tab <- path(dir_output, "math_sm", ext="tex")
+
+ela_gm_tab <- path(dir_output, "ela_gm", ext="tex")
+ela_sa_tab <- path(dir_output, "ela_sa", ext="tex")
+ela_se_tab <- path(dir_output, "ela_se", ext="tex")
+ela_sm_tab <- path(dir_output, "ela_sm", ext="tex")
+
+demo_tab <- path(dir_output, "demo_tab", ext="tex")
+means_tab <- path(dir_output, "means_tab", ext="tex")
+
+cor_mat_tab_1 <- path(dir_output, "cor_mat_1", ext="tex")
+cor_mat_tab_2 <- path(dir_output, "cor_mat_2", ext="tex")
