@@ -3,7 +3,7 @@ Repository for analysis of CORE SEL data. Note none of the data is retained in t
 
 - To get a sense for the flow, see main.R as it organizes the ancillary scripts.
 - To replicate results, edit file_paths.R to point to your data directory and then run main.R
-- To replicate reports, knit the appropriate report. This requires LaTeX and stargazer.
+- ~~To replicate reports, knit the appropriate report. This requires LaTeX and stargazer.~~ Removed while repo is public.
 
 # Files:
 
