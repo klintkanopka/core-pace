@@ -34,3 +34,16 @@ means_tab <- path(dir_output, "means_tab", ext="tex")
 
 cor_mat_tab_1 <- path(dir_output, "cor_mat_1", ext="tex")
 cor_mat_tab_2 <- path(dir_output, "cor_mat_2", ext="tex")
+
+change_cor_tab_1 <- path(dir_output, "change_cor_1", ext="tex")
+change_cor_tab_2 <- path(dir_output, "change_cor_2", ext="tex")
+
+delta_math_gm_tab <- path(dir_output, "delta_math_gm", ext="tex")
+delta_math_sa_tab <- path(dir_output, "delta_math_sa", ext="tex")
+delta_math_se_tab <- path(dir_output, "delta_math_se", ext="tex")
+delta_math_sm_tab <- path(dir_output, "delta_math_sm", ext="tex")
+
+delta_ela_gm_tab <- path(dir_output, "delta_ela_gm", ext="tex")
+delta_ela_sa_tab <- path(dir_output, "delta_ela_sa", ext="tex")
+delta_ela_se_tab <- path(dir_output, "delta_ela_se", ext="tex")
+delta_ela_sm_tab <- path(dir_output, "delta_ela_sm", ext="tex")
